@@ -15,8 +15,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Seed Items
+        seedItems()
+        
+        
+        
         return true
+    }
+    
+    // Mark: -
+    // Mark: Helper Methods
+    private func seedItems() {
+        let ud = NSUserDefaults.standardUserDefaults()
+        
+        if !ud.boolForKey("UserDefaultsSeedItems") {
+            if let filePath = NSBundle.mainBundle().pathForResource("seed", ofType: "plist"), let seedItems = NSArray(contentsOfFile: filePath) {
+                // Items
+                var items = [Item]()
+                
+                // Creat List of Items
+                for seedItem in seedItems {
+                    if let name = seedItem["name"] as? String, let price = seedItem["price"] as? Float {
+                        // Create Item
+                        let item = Item(name: name, price: price)
+                        
+                        // Add Item
+                        items.append(item)
+                    }
+                }
+                
+                if let itemsPath = pathForItems() {
+                    // Write to File
+                    if NSKeyedArchiver.archiveRootObject(items, toFile: itemsPath) {
+                        ud.setBool(true, forKey: "UserDefaultsSeedItems")
+                    }
+                }
+            }
+        }
+    }
+    
+    private func pathForItems() -> String? {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        
+        if let documents = paths.first, let documentsURL = NSURL(string: documents) {
+            return documentsURL.URLByAppendingPathComponent("items").path
+        }
+        
+        return nil
     }
 
     func applicationWillResignActive(application: UIApplication) {

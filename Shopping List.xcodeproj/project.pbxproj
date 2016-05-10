@@ -14,6 +14,7 @@
 		132F97B51CE1A0D400089FD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132F97B31CE1A0D400089FD9 /* LaunchScreen.storyboard */; };
 		132F97BD1CE1A1B400089FD9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F97BC1CE1A1B400089FD9 /* ListViewController.swift */; };
 		132F97BF1CE1A8AD00089FD9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F97BE1CE1A8AD00089FD9 /* Item.swift */; };
+		132F97C11CE2208300089FD9 /* seed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 132F97C01CE2208300089FD9 /* seed.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		132F97B61CE1A0D400089FD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		132F97BC1CE1A1B400089FD9 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ../ListViewController.swift; sourceTree = "<group>"; };
 		132F97BE1CE1A8AD00089FD9 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		132F97C01CE2208300089FD9 /* seed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = seed.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */,
+				132F97C01CE2208300089FD9 /* seed.plist */,
 				132F97BC1CE1A1B400089FD9 /* ListViewController.swift */,
 				132F97AC1CE1A0D400089FD9 /* ViewController.swift */,
 				132F97AE1CE1A0D400089FD9 /* Main.storyboard */,
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				132F97B51CE1A0D400089FD9 /* LaunchScreen.storyboard in Resources */,
+				132F97C11CE2208300089FD9 /* seed.plist in Resources */,
 				132F97B21CE1A0D400089FD9 /* Assets.xcassets in Resources */,
 				132F97B01CE1A0D400089FD9 /* Main.storyboard in Resources */,
 			);
