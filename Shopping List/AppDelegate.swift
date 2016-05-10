@@ -22,47 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-    // Mark: -
-    // Mark: Helper Methods
-    private func seedItems() {
-        let ud = NSUserDefaults.standardUserDefaults()
-        
-        if !ud.boolForKey("UserDefaultsSeedItems") {
-            if let filePath = NSBundle.mainBundle().pathForResource("seed", ofType: "plist"), let seedItems = NSArray(contentsOfFile: filePath) {
-                // Items
-                var items = [Item]()
-                
-                // Creat List of Items
-                for seedItem in seedItems {
-                    if let name = seedItem["name"] as? String, let price = seedItem["price"] as? Float {
-                        // Create Item
-                        let item = Item(name: name, price: price)
-                        
-                        // Add Item
-                        items.append(item)
-                    }
-                }
-                
-                if let itemsPath = pathForItems() {
-                    // Write to File
-                    if NSKeyedArchiver.archiveRootObject(items, toFile: itemsPath) {
-                        ud.setBool(true, forKey: "UserDefaultsSeedItems")
-                    }
-                }
-            }
-        }
-    }
-    
-    private func pathForItems() -> String? {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        
-        if let documents = paths.first, let documentsURL = NSURL(string: documents) {
-            return documentsURL.URLByAppendingPathComponent("items").path
-        }
-        
-        return nil
-    }
+ 
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -85,7 +45,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    private func seedItems() {
+        let ud = NSUserDefaults.standardUserDefaults()
+        
+        if !ud.boolForKey("UserDefaultsSeedItems") {
+            if let filePath = NSBundle.mainBundle().pathForResource("seed", ofType: "plist"), let seedItems = NSArray(contentsOfFile: filePath) {
+                // Items
+                var items = [Item]()
+                
+                // Create List of Items
+                for seedItem in seedItems {
+                    if let name = seedItem["name"] as? String, let price = seedItem["price"] as? Float {
+                        // Create Item
+                        let item = Item(name: name, price: price)
+                        
+                        // Add Item
+                        items.append(item)
+                    }
+                }
+                
+                
+                
+                if let itemsPath = pathForItems() {
+                    // Write to File
+                    if NSKeyedArchiver.archiveRootObject(items, toFile: itemsPath) {
+                        ud.setBool(true, forKey: "UserDefaultsSeedItems")
+                    }
+                }
+            }
+        }
+    }
+    
+    private func pathForItems() -> String? {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        
+        if let documents = paths.first, let documentsURL = NSURL(string: documents) {
+            return documentsURL.URLByAppendingPathComponent("items").path
+        }
+        
+        return nil
+    }
+    
 
 }
 

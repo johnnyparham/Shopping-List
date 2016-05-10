@@ -10,11 +10,17 @@ import UIKit
 
 class ListViewController: UITableViewController {
     
+    let CellIdentifier = "Cell Identifier"
+    
     var items = [Item]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Items"
+        
+        // Register Class
+        tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: CellIdentifier)
         print(items)
     
         
@@ -44,6 +50,8 @@ class ListViewController: UITableViewController {
     
     // Mark: -
     // Mark: Helper Methods
+    
+    
     private func loadItems() {
         if let filePath = pathForItems() where NSFileManager.defaultManager().fileExistsAtPath(filePath) {
             if let archivedItems = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? [Item] {
@@ -56,7 +64,7 @@ class ListViewController: UITableViewController {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         
         if let documents = paths.first, let documentsURL = NSURL(string: documents) {
-            return documentsURL.URLByAppendingPathComponent("items.plist").path
+            return documentsURL.URLByAppendingPathComponent("items").path
         }
         
         return nil
@@ -68,28 +76,32 @@ class ListViewController: UITableViewController {
         }
     }
     
-    
+    // Mark: -
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        // Dequeue Reusable Cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier, forIndexPath: indexPath)
 
-        // Configure the cell...
+        // Fetch Item
+        let item = items[indexPath.row]
+        
+        
+        // Configure Table View Cell
+        cell.textLabel?.text = item.name
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
