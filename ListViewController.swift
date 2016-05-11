@@ -25,6 +25,9 @@ class ListViewController: UITableViewController, AddItemViewControllerDelegate {
         // Create Add Button
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(UIPushBehavior.addItem(_:)))
         
+        // Create Edit Button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: #selector(ListViewController.editItems(_:)))
+        
         // print(items)
     
         
@@ -109,6 +112,10 @@ class ListViewController: UITableViewController, AddItemViewControllerDelegate {
     func addItem(sender: UIBarButtonItem) {
         print("Button was tapped.")
         performSegueWithIdentifier("AddItemViewController", sender: self)
+    }
+    
+    func editItems(sender: UIBarButtonItem) {
+        tableView.setEditing(!tableView.editing, animated: true)
     }
     
     // MARK: -
