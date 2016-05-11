@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1308B49A1CE2C42E00460ADA /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308B4991CE2C42E00460ADA /* AddItemViewController.swift */; };
+		1308B49C1CE3A45B00460ADA /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308B49B1CE3A45B00460ADA /* EditItemViewController.swift */; };
 		132F97AB1CE1A0D400089FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */; };
 		132F97AD1CE1A0D400089FD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F97AC1CE1A0D400089FD9 /* ViewController.swift */; };
 		132F97B01CE1A0D400089FD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132F97AE1CE1A0D400089FD9 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1308B4991CE2C42E00460ADA /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		1308B49B1CE3A45B00460ADA /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 		132F97A71CE1A0D400089FD9 /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		132F97AC1CE1A0D400089FD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */,
 				132F97C01CE2208300089FD9 /* seed.plist */,
 				132F97BC1CE1A1B400089FD9 /* ListViewController.swift */,
+				1308B49B1CE3A45B00460ADA /* EditItemViewController.swift */,
 				1308B4991CE2C42E00460ADA /* AddItemViewController.swift */,
 				132F97AC1CE1A0D400089FD9 /* ViewController.swift */,
 				132F97AE1CE1A0D400089FD9 /* Main.storyboard */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1308B49A1CE2C42E00460ADA /* AddItemViewController.swift in Sources */,
+				1308B49C1CE3A45B00460ADA /* EditItemViewController.swift in Sources */,
 				132F97BF1CE1A8AD00089FD9 /* Item.swift in Sources */,
 				132F97BD1CE1A1B400089FD9 /* ListViewController.swift in Sources */,
 				132F97AD1CE1A0D400089FD9 /* ViewController.swift in Sources */,

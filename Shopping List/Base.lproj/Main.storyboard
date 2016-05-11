@@ -39,6 +39,7 @@
                     <navigationItem key="navigationItem" id="F7R-K0-ML8"/>
                     <connections>
                         <segue destination="LzW-uF-WXo" kind="presentation" identifier="AddItemViewController" id="chc-H4-nWK"/>
+                        <segue destination="NhA-xZ-TAK" kind="show" identifier="EditItemViewController" id="7xW-Qk-ynz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2J-OK-nWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,7 +98,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nh3-i9-TxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="-266"/>
+            <point key="canvasLocation" x="1601" y="-6"/>
+        </scene>
+        <!--Edit Item View Controller-->
+        <scene sceneID="fNy-iY-AgI">
+            <objects>
+                <viewController id="NhA-xZ-TAK" customClass="EditItemViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zmY-Bj-6cy"/>
+                        <viewControllerLayoutGuide type="bottom" id="jZ7-as-6MQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K3s-tk-NRl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kbu-E7-3db">
+                                <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="POi-Ga-HaE">
+                                <rect key="frame" x="20" y="110" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kbu-E7-3db" firstAttribute="leading" secondItem="POi-Ga-HaE" secondAttribute="leading" id="5k9-oT-zQH"/>
+                            <constraint firstItem="Kbu-E7-3db" firstAttribute="trailing" secondItem="POi-Ga-HaE" secondAttribute="trailing" id="Om9-6V-J1u"/>
+                            <constraint firstItem="Kbu-E7-3db" firstAttribute="trailing" secondItem="K3s-tk-NRl" secondAttribute="trailingMargin" id="Udb-jH-uqT"/>
+                            <constraint firstItem="Kbu-E7-3db" firstAttribute="top" secondItem="zmY-Bj-6cy" secondAttribute="bottom" constant="8" symbolic="YES" id="g4I-jh-fHj"/>
+                            <constraint firstItem="Kbu-E7-3db" firstAttribute="leading" secondItem="K3s-tk-NRl" secondAttribute="leadingMargin" id="lfU-FU-GdU"/>
+                            <constraint firstItem="POi-Ga-HaE" firstAttribute="top" secondItem="Kbu-E7-3db" secondAttribute="bottom" constant="8" symbolic="YES" id="rQY-k0-har"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="Kbu-E7-3db" id="Qgb-n4-kYL"/>
+                        <outlet property="priceTextField" destination="POi-Ga-HaE" id="fVQ-so-jxk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KoA-lV-1Tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2363" y="-266"/>
         </scene>
         <!--Item-->
         <scene sceneID="1uK-za-nNA">
