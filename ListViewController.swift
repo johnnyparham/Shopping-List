@@ -118,6 +118,23 @@ class ListViewController: UITableViewController, AddItemViewControllerDelegate {
         tableView.setEditing(!tableView.editing, animated: true)
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+            return true
+        }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete Item from Items
+            items.removeAtIndex(indexPath.row)
+            
+            // Update Table View
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+            
+            // Save Changes
+            saveItems()
+        }
+    }
+    
     // MARK: -
     // MARK: Add Item View Controller Delegate Methods
     func controller(controller: AddItemViewController, didSaveItemWithName name: String, andPrice price: Float) {
