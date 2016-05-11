@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1308B49A1CE2C42E00460ADA /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308B4991CE2C42E00460ADA /* AddItemViewController.swift */; };
 		132F97AB1CE1A0D400089FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */; };
 		132F97AD1CE1A0D400089FD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F97AC1CE1A0D400089FD9 /* ViewController.swift */; };
 		132F97B01CE1A0D400089FD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132F97AE1CE1A0D400089FD9 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1308B4991CE2C42E00460ADA /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		132F97A71CE1A0D400089FD9 /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		132F97AC1CE1A0D400089FD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */,
 				132F97C01CE2208300089FD9 /* seed.plist */,
 				132F97BC1CE1A1B400089FD9 /* ListViewController.swift */,
+				1308B4991CE2C42E00460ADA /* AddItemViewController.swift */,
 				132F97AC1CE1A0D400089FD9 /* ViewController.swift */,
 				132F97AE1CE1A0D400089FD9 /* Main.storyboard */,
 				132F97BE1CE1A8AD00089FD9 /* Item.swift */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1308B49A1CE2C42E00460ADA /* AddItemViewController.swift in Sources */,
 				132F97BF1CE1A8AD00089FD9 /* Item.swift in Sources */,
 				132F97BD1CE1A1B400089FD9 /* ListViewController.swift in Sources */,
 				132F97AD1CE1A0D400089FD9 /* ViewController.swift in Sources */,
@@ -298,6 +302,7 @@
 				132F97BB1CE1A0D400089FD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -21,7 +21,11 @@ class ListViewController: UITableViewController {
         
         // Register Class
         tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: CellIdentifier)
-        print(items)
+        
+        // Create Add Button
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(UIPushBehavior.addItem(_:)))
+        
+        // print(items)
     
         
 //        let item = Item()
@@ -102,6 +106,10 @@ class ListViewController: UITableViewController {
         return cell
     }
     
+    func addItem(sender: UIBarButtonItem) {
+        print("Button was tapped.")
+        performSegueWithIdentifier("AddItemViewController", sender: self)
+    }
 
     /*
     // Override to support conditional editing of the table view.
