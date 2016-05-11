@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ListViewController: UITableViewController, AddItemViewControllerDelegate {
+class ListViewController: UITableViewController, AddItemViewControllerDelegate, EditItemViewControllerDelegate {
     
     let CellIdentifier = "Cell Identifier"
     
     var items = [Item]()
+    var selection: Item?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -105,6 +107,7 @@ class ListViewController: UITableViewController, AddItemViewControllerDelegate {
         
         // Configure Table View Cell
         cell.textLabel?.text = item.name
+        cell.accessoryType = .DetailDisclosureButton
 
         return cell
     }
@@ -159,9 +162,41 @@ class ListViewController: UITableViewController, AddItemViewControllerDelegate {
                 let addItemViewController = navigationController.viewControllers.first as? AddItemViewController {
                 addItemViewController.delegate = self
             }
+        } else if segue.identifier == "EditItemViewController" {
+            if let editItemViewController = segue.destinationViewController as? EditItemViewController, let item = selection {
+                editItemViewController.delegate = self
+                editItemViewController.item = item
+            }
         }
     }
 
+    // MARK: -
+    // MARK: Table View Delegate Methods
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        // Fetch Item
+        let item = items[indexPath.row]
+        
+        // Update Selection
+        selection = item
+        
+        // Perform Segue
+        performSegueWithIdentifier("EditItemViewController", sender: self)
+    }
+    
+    // MARK: -
+    // MARK: Edit Item View Controller Delegate Methods
+    
+    func controller(controller: EditItemViewController, didUpdateItem item: Item) {
+        // Fetch Index for Item
+        if let index = items.indexOf(item) {
+            // Update Table View
+            tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Fade)
+        }
+        
+        // Save Items
+        saveItems()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

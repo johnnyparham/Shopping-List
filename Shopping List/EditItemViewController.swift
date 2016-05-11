@@ -27,6 +27,10 @@ class EditItemViewController: UIViewController {
 
         // Create Save Button
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(EditItemViewController.save(_:)))
+        
+        // Populate Text Fields
+        nameTextField.text = item.name
+        priceTextField.text = "\(item.price)"
     }
 
     override func didReceiveMemoryWarning() {
