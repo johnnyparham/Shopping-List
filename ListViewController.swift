@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UITableViewController {
+class ListViewController: UITableViewController, AddItemViewControllerDelegate {
     
     let CellIdentifier = "Cell Identifier"
     
@@ -109,6 +109,33 @@ class ListViewController: UITableViewController {
     func addItem(sender: UIBarButtonItem) {
         print("Button was tapped.")
         performSegueWithIdentifier("AddItemViewController", sender: self)
+    }
+    
+    // MARK: -
+    // MARK: Add Item View Controller Delegate Methods
+    func controller(controller: AddItemViewController, didSaveItemWithName name: String, andPrice price: Float) {
+        // Create Item
+        let item = Item(name: name, price: price)
+        
+        // Add Item to Items
+        items.append(item)
+        
+        // Add Row to Table View
+        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: (items.count - 1), inSection: 0)], withRowAnimation: .None)
+        
+        // Save Items
+        saveItems()
+    }
+    
+    // MARK: -
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddItemViewController" {
+            if let navigationController = segue.destinationViewController as? UINavigationController,
+                let addItemViewController = navigationController.viewControllers.first as? AddItemViewController {
+                addItemViewController.delegate = self
+            }
+        }
     }
 
     /*

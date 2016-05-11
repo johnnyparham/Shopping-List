@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate {
+    func controller(controller: AddItemViewController, didSaveItemWithName name: String, andPrice price: Float)
+}
+
 class AddItemViewController: UIViewController {
     
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var priceTextField: UITextField!
+    
+    var delegate: AddItemViewControllerDelegate?
     
     // MARK: -
     // MARK: View Life Cycle
@@ -27,6 +33,12 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func save(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        if let name = nameTextField.text, let priceAsString = priceTextField.text, let price = Float(priceAsString) {
+            // Notify Delegate
+            delegate?.controller(self, didSaveItemWithName: name, andPrice: price)
+            
+            // Dismiss View Controller
+            dismissViewControllerAnimated(true, completion: nil)
     }
+}
 }
