@@ -17,6 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="sc8-Na-03O" kind="relationship" relationship="viewControllers" id="wW1-hF-6sg"/>
+                        <segue destination="kUB-hU-gvo" kind="relationship" relationship="viewControllers" id="OG3-Gt-Kcr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBN-id-bSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,7 +67,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ba5-Ms-Obu">
                                 <rect key="frame" x="20" y="110" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,6 +101,25 @@
             </objects>
             <point key="canvasLocation" x="1603" y="-266"/>
         </scene>
+        <!--Shopping List View Controller-->
+        <scene sceneID="tcu-Zx-8Po">
+            <objects>
+                <tableViewController id="iIw-Vu-jlD" customClass="ShoppingListViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="etY-qK-FmZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="iIw-Vu-jlD" id="E7j-uV-Axc"/>
+                            <outlet property="delegate" destination="iIw-Vu-jlD" id="4YE-Dg-kbP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="D7G-ev-zBI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6H-6v-GFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-580" y="494"/>
+        </scene>
         <!--Edit Item View Controller-->
         <scene sceneID="fNy-iY-AgI">
             <objects>
@@ -120,7 +140,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="POi-Ga-HaE">
                                 <rect key="frame" x="20" y="110" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,6 +198,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTd-fY-uTs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="-266"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="2hH-hm-i4y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kUB-hU-gvo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yEF-ey-20e"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1nX-dl-ZSa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iIw-Vu-jlD" kind="relationship" relationship="rootViewController" id="OYP-UB-uaD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpw-rK-Jf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1308" y="494"/>
         </scene>
     </scenes>
 </document>
