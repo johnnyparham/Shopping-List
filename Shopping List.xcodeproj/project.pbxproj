@@ -10,6 +10,8 @@
 		1308B49A1CE2C42E00460ADA /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308B4991CE2C42E00460ADA /* AddItemViewController.swift */; };
 		1308B49C1CE3A45B00460ADA /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308B49B1CE3A45B00460ADA /* EditItemViewController.swift */; };
 		1308B49E1CE4154E00460ADA /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308B49D1CE4154E00460ADA /* ShoppingListViewController.swift */; };
+		1308B4A01CE4232B00460ADA /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1308B49F1CE4232B00460ADA /* checkmark.png */; };
+		1308B4A21CE4234000460ADA /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1308B4A11CE4234000460ADA /* checkmark@2x.png */; };
 		132F97AB1CE1A0D400089FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */; };
 		132F97B01CE1A0D400089FD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132F97AE1CE1A0D400089FD9 /* Main.storyboard */; };
 		132F97B21CE1A0D400089FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 132F97B11CE1A0D400089FD9 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		1308B4991CE2C42E00460ADA /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		1308B49B1CE3A45B00460ADA /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 		1308B49D1CE4154E00460ADA /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		1308B49F1CE4232B00460ADA /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
+		1308B4A11CE4234000460ADA /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
 		132F97A71CE1A0D400089FD9 /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		132F97AF1CE1A0D400089FD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,13 +68,15 @@
 		132F97A91CE1A0D400089FD9 /* Shopping List */ = {
 			isa = PBXGroup;
 			children = (
-				132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */,
+				1308B49F1CE4232B00460ADA /* checkmark.png */,
+				1308B4A11CE4234000460ADA /* checkmark@2x.png */,
 				132F97C01CE2208300089FD9 /* seed.plist */,
+				132F97AA1CE1A0D400089FD9 /* AppDelegate.swift */,
 				132F97BC1CE1A1B400089FD9 /* ListViewController.swift */,
 				1308B49B1CE3A45B00460ADA /* EditItemViewController.swift */,
 				1308B4991CE2C42E00460ADA /* AddItemViewController.swift */,
-				132F97AE1CE1A0D400089FD9 /* Main.storyboard */,
 				1308B49D1CE4154E00460ADA /* ShoppingListViewController.swift */,
+				132F97AE1CE1A0D400089FD9 /* Main.storyboard */,
 				132F97BE1CE1A8AD00089FD9 /* Item.swift */,
 				132F97B11CE1A0D400089FD9 /* Assets.xcassets */,
 				132F97B31CE1A0D400089FD9 /* LaunchScreen.storyboard */,
@@ -138,8 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				132F97B51CE1A0D400089FD9 /* LaunchScreen.storyboard in Resources */,
+				1308B4A01CE4232B00460ADA /* checkmark.png in Resources */,
 				132F97C11CE2208300089FD9 /* seed.plist in Resources */,
 				132F97B21CE1A0D400089FD9 /* Assets.xcassets in Resources */,
+				1308B4A21CE4234000460ADA /* checkmark@2x.png in Resources */,
 				132F97B01CE1A0D400089FD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
